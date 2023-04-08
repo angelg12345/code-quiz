@@ -8,28 +8,33 @@
     <title>Document</title>
 </head>
 <body>
-    <section class="quiz-container">
-        <h2 class="question">question</h2>
+    <section class="quiz-container" id="quiz-container">
+        
         <div class="quiz-header">
+            <h2 id="question">question</h2>
             <ul>
                 <li>
-                    <label for="a_name"></label>
-                    <input type="radio">
+                    <input type="radio" name="answer" id="a" class="answer">
+                    <label for="a" id="a_choice"></label>
+                    
                 </li>
                 <li>
-                    <label for="a_name"></label>
-                    <input type="radio">
+                    <input type="radio" name="answer" id="b" class="answer">
+                    <label for="b" id=" b_choice"></label>
+                    
                 </li>
                 <li>
-                    <label for="a_name"></label>
-                    <input type="radio">
+                    <input type="radio" name="answer" id="c" class="answer">
+                    <label for="c" id=" c_choice"></label>
+                    
                 </li>
                 <li>
-                    <label for="a_name"></label>
-                    <input type="radio">
+                    <input type="radio"name="answer" id="d" class="answer">
+                    <label for="d" id=" d_choice"></label>
+                    
                 </li>
             </ul>
-            <button class="submit">submit</button>
+            <button id="submit">submit</button>
 
         </div>
     </section>
