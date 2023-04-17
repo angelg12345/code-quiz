@@ -49,6 +49,7 @@ let score = 0;
 //loads the first question and choices onto html
 loadQuiz()
 function loadQuiz() {
+deselectAnswers()
 //keeps track of the question by number
     const currentQuizData = quizData[currentQuiz]
 //Displays the Current question or the question that the user is on to the question element in html
@@ -57,6 +58,10 @@ function loadQuiz() {
     b_choice.innerText = currentQuizData.b
     c_choice.innerText = currentQuizData.c
     d_choice.innerText = currentQuizData.d
+}
+//This makes it so that each time a new question comes up the check boxes are not checked. It also ensures that no more than one box is selected but I used a radio input.
+function deselectAnswers () {
+    answerEls.forEach(answerEls => answerEls.checked = false)
 }
 
 
