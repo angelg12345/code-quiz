@@ -1,49 +1,42 @@
-//this is when you press the start quiz button. It displays a question. 
-var startQuiz = document.getElementById("start-quiz")
-var timeEl = document.querySelector(".timer")
 
-
-let questions = [
+const quizData = [
     {
-        numb: 1,
         question: "What html tag is used to connnect the html to the javascript page?",
-        answer: "<script><script/>",
-        options: [
-            "<link><link/>",
-            "<java><java/>",
-            "<src><src/>",
-            "<script><script/>"
-        ]
+           a: "<link><link/>",
+           b: "<java><java/>",
+           c: "<src><src/>",
+           d: "<script><script/>",
+        correct: "d",
     },
     {
-        numb: 2,
-        question:
-        answer:
-        options: [
-            
-        ]
-    }
-        
-]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        question: "which of the following is not a valid data type in JavaScript?",
+            a:"string",
+            b:"range",
+            c:"boolean",
+            d:"array",
+        correct:"b",
+    },
+    {
+        question:"How do you change the background color of an element in css?",
+            a:"background-color:",
+            b:"color:",
+            c:"bg-color:",
+            d:"background:",
+        correct: "a",
+    },
+    {
+        question: "Why do we use media query in CSS?",
+            a:"To define a new class",
+            b:"To display a video",
+            c:"To set different font sizes",
+            d:"To account styling for specific screen sizes or devices",
+        correct: "d",
+    },
+];
+var secondsLeft = 60
+const quiz= document.getElementById('quiz');
+const answerEls = document.querySelectorAll('.answer');
+const questionsEl = document.getElementById('question');
 
 var secondsleft = 60;
 
