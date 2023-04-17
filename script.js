@@ -1,4 +1,4 @@
-
+//Questions and multiple choices including the correct answer
 const quizData = [
     {
         question: "What html tag is used to connnect the html to the javascript page?",
@@ -43,10 +43,21 @@ const b_choice = document.getElementById('b_choice');
 const c_choice = document.getElementById('c_choice');
 const d_choice = document.getElementById('d_choice');
 const submitBtn = document.getElementById('submit');
+
 let currentQuiz = 0;
 let score = 0;
-
-
+//loads the first question and choices onto html
+loadQuiz()
+function loadQuiz() {
+//keeps track of the question by number
+    const currentQuizData = quizData[currentQuiz]
+//Displays the Current question or the question that the user is on to the question element in html
+    questionsEl.innerText = currentQuizData.question
+    a_choice.innerText = currentQuizData.a
+    b_choice.innerText = currentQuizData.b
+    c_choice.innerText = currentQuizData.c
+    d_choice.innerText = currentQuizData.d
+}
 
 
 // This is the timer
