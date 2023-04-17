@@ -33,14 +33,22 @@ const quizData = [
         correct: "d",
     },
 ];
+//all of the variables
 var secondsLeft = 60
 const quiz= document.getElementById('quiz');
 const answerEls = document.querySelectorAll('.answer');
 const questionsEl = document.getElementById('question');
+const a_choice = document.getElementById('a_choice');
+const b_choice = document.getElementById('b_choice');
+const c_choice = document.getElementById('c_choice');
+const d_choice = document.getElementById('d_choice');
+const submitBtn = document.getElementById('submit');
+let currentQuiz = 0;
+let score = 0;
 
-var secondsleft = 60;
 
-startQuiz.addEventListener("click", function(){
+
+
 // This is the timer
     var timerInterval = setInterval(function(){
         secondsleft--;
@@ -50,6 +58,3 @@ startQuiz.addEventListener("click", function(){
             clearInterval(timerInterval);
         }
     }, 1000)
-//this is the question change that happens
-});
-startQuiz()
