@@ -63,14 +63,24 @@ deselectAnswers()
 function deselectAnswers () {
     answerEls.forEach(answerEls => answerEls.checked = false)
 }
+//sets loop to go through each answer and checks if the answer is correct. It is getting the answer that the user selected. 
+function getSelected() {
+    let answer
+    answerEls.forEach(answerEls => {
+        if(answerEls.checked) {
+            answer = answerEls.id
+        }
+    })
+    return answer
+}
 
 
 // This is the timer
-    var timerInterval = setInterval(function(){
-        secondsleft--;
-        timeEl.textContent = secondsleft + " seconds left "
+var timerInterval = setInterval(function(){
+    secondsleft--;
+    timeEl.textContent = secondsleft + " seconds left "
 
-        if(secondsleft === 0){
-            clearInterval(timerInterval);
-        }
-    }, 1000)
+    if(secondsleft === 0){
+        clearInterval(timerInterval);
+    }
+}, 1000)
