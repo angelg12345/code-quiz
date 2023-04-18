@@ -73,6 +73,25 @@ function getSelected() {
     })
     return answer
 }
+// Puts a click function on to the submit button and checks to see if the question is correct.
+submitBtn.addEventListener('click', () => {
+    const answer = getSelected()
+    if(answer) {
+        if(answer === quizData[currentQuiz].correct) {
+            score++
+        }
+        // calls for a loop to ensure it goes through each question and answer
+    currentQuiz++
+    if(currentQuiz < quizData.length) {
+        loadQuiz()
+        // Tells the score at the end
+    } else {
+        quiz.innerHTML = `
+        <h2>You answered ${score}/${quizData.length} questions correctly</h2>
+        <button onclick="location.reload()">Reload</button>`
+    }    
+    }
+})
 
 
 // This is the timer
