@@ -46,9 +46,29 @@ const submitBtn = document.getElementById('submit');
 
 let currentQuiz = 0;
 let score = 0;
+
+const timeEl = document.getElementById('timer')
+
+function startTimer(){
+    let time = secondsLeft;
+    timeEl.innerText = time;
+
+    var timerInterval = setInterval(function(){
+        time--;
+        timeEl.textContent = time;
+    
+        if(time === 0){
+            clearInterval(timerInterval);
+        }
+    }, 1000);
+    
+}
+
 //loads the first question and choices onto html
 loadQuiz()
+startTimer();
 function loadQuiz() {
+startTimer()
 deselectAnswers()
 //keeps track of the question by number
     const currentQuizData = quizData[currentQuiz]
@@ -93,13 +113,3 @@ submitBtn.addEventListener('click', () => {
     }
 })
 
-
-// This is the timer
-var timerInterval = setInterval(function(){
-    secondsleft--;
-    timeEl.textContent = secondsleft + " seconds left "
-
-    if(secondsleft === 0){
-        clearInterval(timerInterval);
-    }
-}, 1000)
