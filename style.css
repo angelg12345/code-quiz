@@ -11,8 +11,7 @@ body {
     margin: 0;
     height: 100vh;
 }
-
-.quiz-container {
+.start-content {
     background-color: #fff;
     width: 700px;
     overflow: hidden;
@@ -20,11 +19,28 @@ body {
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 }
 
-.quiz-header {
+.start-text {
+    text-align: center;
+    padding: 30px;
+    font-size: 18px;
+}
+
+.quiz-container{
+    background-color: #fff;
+    width: 700px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+   display: none;
+    
+}
+
+
+.quiz-header, .start-header {
     padding: 3rem;
 }
 /*This is the question that displays*/
-h2 {
+h2, #quiz-title{
     padding: 1rem;
     margin: 0;
     text-align: center;

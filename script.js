@@ -35,6 +35,10 @@ const quizData = [
     },
 ];
 //all of the variables
+const startSection = document.getElementById('start-page')
+const startBtn = document.getElementById("start");
+
+
 var secondsLeft = 60
 var timerInterval;
 const quiz= document.getElementById('quiz');
@@ -64,7 +68,7 @@ function startTimer(){
 loadQuiz();
 ;
 function loadQuiz() {
-const startBtn = document.getElementById("start");
+
 startBtn.style.display = "none";
 
 deselectAnswers()
