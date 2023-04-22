@@ -1,3 +1,4 @@
+
 //Questions and multiple choices including the correct answer
 const quizData = [
     {
@@ -35,6 +36,7 @@ const quizData = [
 ];
 //all of the variables
 var secondsLeft = 60
+var timerInterval;
 const quiz= document.getElementById('quiz');
 const answerEls = document.querySelectorAll('.answer');
 const questionsEl = document.getElementById('question');
@@ -50,25 +52,21 @@ let score = 0;
 const timeEl = document.getElementById('timer')
 
 function startTimer(){
-    let time = secondsLeft;
-    timeEl.innerText = time;
-
-    var timerInterval = setInterval(function(){
-        time--;
-        timeEl.textContent = time;
-    
-        if(time === 0){
-            clearInterval(timerInterval);
+    timeEl.innerText = secondsLeft;
+    const timerId = setInterval(() => {
+        timeEl.innerHTML -= 1;
+        if (Number.parseInt(timeEl.innerHTML)<= 0) {
+            clearTimeout(timerId);
         }
     }, 1000);
-    
 }
-
 //loads the first question and choices onto html
-loadQuiz()
-startTimer();
+loadQuiz();
+;
 function loadQuiz() {
-startTimer()
+const startBtn = document.getElementById("start");
+startBtn.style.display = "none";
+
 deselectAnswers()
 //keeps track of the question by number
     const currentQuizData = quizData[currentQuiz]
@@ -78,6 +76,8 @@ deselectAnswers()
     b_choice.innerText = currentQuizData.b
     c_choice.innerText = currentQuizData.c
     d_choice.innerText = currentQuizData.d
+
+    
 }
 //This makes it so that each time a new question comes up the check boxes are not checked. It also ensures that no more than one box is selected but I used a radio input.
 function deselectAnswers () {
@@ -90,15 +90,26 @@ function getSelected() {
         if(answerEls.checked) {
             answer = answerEls.id
         }
-    })
-    return answer
+    });
+    return answer;
 }
 // Puts a click function on to the submit button and checks to see if the question is correct.
+clearInterval(timerInterval)
+startTimer();
 submitBtn.addEventListener('click', () => {
+   
+    submitBtn.disabled = true;
     const answer = getSelected()
     if(answer) {
+      
         if(answer === quizData[currentQuiz].correct) {
             score++
+            clearInterval(timerInterval)
+            console.log('correct')
+        } else {
+       timeEl.innerHTML -= 10;
+        console.log('wrong')
+           
         }
         // calls for a loop to ensure it goes through each question and answer
     currentQuiz++
@@ -110,6 +121,10 @@ submitBtn.addEventListener('click', () => {
         <h2>You answered ${score}/${quizData.length} questions correctly</h2>
         <button onclick="location.reload()">Reload</button>`
     }    
+
+    setTimeout(() => {
+        submitBtn.disabled = false;
+    }, 1000);
     }
 })
 
