@@ -36,7 +36,7 @@ const quizData = [
 ];
 //all of the variables
 const startSection = document.getElementById('start-page')
-const startBtn = document.getElementById("start");
+const startBtn = document.getElementById("start-btn");
 
 
 var secondsLeft = 60
@@ -64,13 +64,17 @@ function startTimer(){
         }
     }, 1000);
 }
+startBtn.addEventListener('click', () => {
+    console.log('you pushed the button')
+    startSection.style.display = 'none';
+    loadQuiz();
+})
 //loads the first question and choices onto html
-loadQuiz();
-;
+
+
 function loadQuiz() {
 
-startBtn.style.display = "none";
-
+quiz.style.display = 'block';
 deselectAnswers()
 //keeps track of the question by number
     const currentQuizData = quizData[currentQuiz]
@@ -80,6 +84,7 @@ deselectAnswers()
     b_choice.innerText = currentQuizData.b
     c_choice.innerText = currentQuizData.c
     d_choice.innerText = currentQuizData.d
+
 
     
 }
