@@ -50,6 +50,8 @@ const c_choice = document.getElementById('c_choice');
 const d_choice = document.getElementById('d_choice');
 const submitBtn = document.getElementById('submit');
 
+
+
 let currentQuiz = 0;
 let score = 0;
 
@@ -107,7 +109,7 @@ clearInterval(timerInterval)
 startTimer();
 submitBtn.addEventListener('click', () => {
    
-    submitBtn.disabled = true;
+    
     const answer = getSelected()
     if(answer) {
       

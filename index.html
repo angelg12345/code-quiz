@@ -16,7 +16,7 @@
         </div>
     </section>
     <!--This is the entire quiz section including the timer inside-->
-    <div class="quiz-container" id="quiz">
+    <div  class="quiz-container" id="quiz">
         <div class="quiz-header" >
             <p>Time left: <span id="timer"></span></p>
             <h2 id="question">question</h2>
@@ -42,6 +42,20 @@
         </div>
         <button id="submit">Submit</button> 
     </div>
+
+    <section hidden id="score-form" class="end-content">
+        <form>
+            <h3>You are finished!</h3>
+            <p>Final Score: <span id="final-score"></span></p>
+            <label for="initials">Initials:</label>
+            <input
+            id="initials"
+            name="initials"
+            type="text"
+            placeholder="initials"/>
+            <button type="submit" id="score-btn">Submit Score</button>
+        </form>
+    </section>
    
    
     <script src="script.js"></script>
