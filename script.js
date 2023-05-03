@@ -50,10 +50,12 @@ const c_choice = document.getElementById('c_choice');
 const d_choice = document.getElementById('d_choice');
 const submitBtn = document.getElementById('submit');
 
+const scoreForm = document.getElementById('score-form');
 
 
 let currentQuiz = 0;
 let score = 0;
+let initials = ''
 
 const timeEl = document.getElementById('timer')
 
@@ -90,7 +92,7 @@ deselectAnswers()
 
     
 }
-//This makes it so that each time a new question comes up the check boxes are not checked. It also ensures that no more than one box is selected but I used a radio input.
+//This makes it so that each time a new question comes up the check boxes are not checked. 
 function deselectAnswers () {
     answerEls.forEach(answerEls => answerEls.checked = false)
 }
@@ -128,9 +130,12 @@ submitBtn.addEventListener('click', () => {
         loadQuiz()
         // Tells the score at the end
     } else {
-        quiz.innerHTML = `
-        <h2>You answered ${score}/${quizData.length} questions correctly</h2>
-        <button onclick="location.reload()">Reload</button>`
+        localStorage.setItem('mostRecentScore', score);
+        console.log(score)
+        return window.location.assign("end.html");
+        
+    //    displayScore()
+      
     }    
 
     setTimeout(() => {
@@ -138,4 +143,8 @@ submitBtn.addEventListener('click', () => {
     }, 1000);
     }
 })
+
+
+
+
 

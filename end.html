@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+    <section  id="score-form" class="end-content">
+        <form>
+            <h3>You are finished!</h3>
+            <p class="score">Final Score: <span id="final-score"></span></p>
+            <label for="initials">Initials:</label>
+            <input
+            id="initials"
+            name="initials"
+            type="text"
+            placeholder="initials"/>
+            <button type="submit" id="score-btn" class="scoreBtn" onclick="saveHighScore(event)">view high scores</button>
+        </form>
+    </section>
+
+    <section hidden id="highscores">
+        <h3>highscores</h1>
+            <table>
+                <thead>
+                    <td>ranking</td>
+                    <td>name</td>
+                    <td>score</td>
+                </thead>
+                <tbody id="data">
+
+                </tbody>
+            </table>
+            <button id="clear-highscores"></button>
+    </section>
+   
+<script src="end.js"></script>
+</body>
+</html>

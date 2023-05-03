@@ -11,7 +11,7 @@ body {
     margin: 0;
     height: 100vh;
 }
-.start-content {
+.start-content, .end-content {
     background-color: #fff;
     width: 700px;
     overflow: hidden;
@@ -40,7 +40,7 @@ body {
     padding: 3rem;
 }
 /*This is the question that displays*/
-h2, #quiz-title{
+h2, #quiz-title, h3{
     padding: 1rem;
     margin: 0;
     text-align: center;
@@ -70,3 +70,8 @@ button:focus {
     background-color: #D9544D;
     outline: none;
 }
+
+.score, label{
+    padding: 25px;
+}
+
