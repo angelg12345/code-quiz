@@ -2,7 +2,7 @@
 
 ## Description
 
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
+
 This application is a timed quiz on html, javascript, and CSS. The user has 60 seconds to complete the quiz and each incorrect question results in -10 seconds. After the quiz is completed the user can then enter their name which is then stored in a highscores page. This quiz challenges users new to coding and helps touch up on general knowledge. I learned many of the basics of javascript while working on this project and more. 
 
 
