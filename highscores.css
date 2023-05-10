@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    background: linear-gradient(0.25turn,   #3f87a6, #ebf8e1,   #f69d3c );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin: 0;
+    height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    width: 500px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    
+    
+}
+.text-container {
+    text-align: center;
+}
+
+li {
+    list-style-type: none;
+}

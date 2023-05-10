@@ -107,6 +107,7 @@ let initials = ''
 
 const timeEl = document.getElementById('timer')
 //This is the timer. It ends the game if it reaches 0.
+// it also makes sure that if the game ends through the timer the score is still displayed and put into local storage
 function startTimer(){
     timeEl.innerText = secondsLeft;
     const timerId = setInterval(() => {
@@ -114,6 +115,7 @@ function startTimer(){
         if (Number.parseInt(timeEl.innerHTML)<= 0) {
             clearTimeout(timerId);
             endGame()
+            localStorage.setItem('mostRecentScore', score);
         }
         
     }, 1000);
@@ -199,7 +201,7 @@ submitBtn.addEventListener('click', () => {
         localStorage.setItem('mostRecentScore', score);
         console.log(mostRecentScore)
        window.location.assign("end.html");
-    //    displayScore()
+    
     }    
 
     
